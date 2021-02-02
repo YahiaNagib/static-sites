@@ -1,0 +1,181 @@
+/* header */
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  z-index: 10;
+  position: relative;
+  background-color: #fff;
+}
+
+.header .items {
+  margin: auto;
+}
+
+.header .items .nav-item {
+  margin-left: 10px;
+}
+
+.header .items .nav-item a:hover {
+  box-shadow: inset 0px -3px 0px greenyellow;
+}
+
+.header-btn {
+  color: white;
+  width: 150px;
+  height: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 207, 52, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 100px;
+}
+
+/* end header */
+
+/* title */
+
+.title {
+  background-color: #fafafa;
+  position: relative;
+  margin-top: 0;
+  /* overflow: hidden; */
+}
+
+.title .container {
+  margin-right: 0;
+}
+
+.title .row {
+  height: 600px;
+}
+
+.title-heading {
+  margin-top: 170px;
+  padding-left: 150px;
+}
+
+.images {
+  background-image: url("./images/bg-intro-desktop.svg");
+  background-position: 10% 60%;
+  background-repeat: no-repeat;
+}
+
+.phone-img {
+  position: absolute;
+  width: 90%;
+  transform: translate(17%, -50%);
+  /* clip-path: polygon(0 12.5%, 85% 12.5%, 85% 100%, 0 100%); */
+  /* padding-left: 20px; */
+  top: 50%;
+  right: 0;
+}
+
+/* end title */
+
+/* reasons */
+
+.reasons {
+  background-color: #f4f5f7;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.reasons-items {
+  text-align: center;
+}
+
+.reasons-items h3 {
+  padding: 10% 0;
+}
+
+/* end reasons */
+
+/* articles */
+
+.articles {
+  background-color: #fafafa;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.articles h1 {
+  padding: 5% 0;
+}
+
+.article-item {
+  background-color: #ffffff;
+  width: 22%;
+  margin-right: 3%;
+  float: left;
+}
+
+.article-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-data {
+  padding: 15% 10% 10%;
+}
+
+.article-data h5 {
+  padding: 5% 0;
+}
+
+/* end articles */
+
+/* footer */
+
+.footer {
+  background-color: #2d314e;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.footer .icons {
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.footer .icons i {
+  padding-right: 10px;
+}
+
+.footer .icons i:hover {
+  color: #30cf72;
+  cursor: pointer;
+}
+
+.footer .items {
+  color: #ffffff;
+}
+
+.footer .items span {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.footer .items span:hover {
+  color: #30cf72;
+  cursor: pointer;
+}
+
+.footer .copyright {
+  padding-left: 50px;
+  text-align: right;
+}
+
+.footer .copyright p {
+  color: #bfc0c9;
+  padding-top: 30px;
+}
+
+/* end footer */
+
+.clear-fix {
+  clear: both;
+}

@@ -1,0 +1,20 @@
+.site-header {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .list {
+        display: flex;
+        list-style: none;
+        font-size: var(--font-size-primary);
+
+        &__item:not(:last-child) {
+            margin-right: 2rem;
+        }
+        
+        &__item .link {
+            text-decoration: none;
+            color: grey;
+        }
+    }
+}

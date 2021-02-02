@@ -1,0 +1,165 @@
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 55rem; // Specify the same height as its childern because its height drops to 0 due to
+  // absolute positioning
+
+  &__side {
+    background-color: $color-white;
+    text-align: center;
+    transition: all 0.8s ease;
+    position: absolute; // Setting position to absolute to make the front and back sides on top of each other
+    top: 0;
+    left: 0;
+    height: 55rem;
+    width: 100%; // Make the width 100% of the column
+    backface-visibility: hidden; // Set the back of the card to hidden
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      .card__img {
+        background-size: cover; /* to make the image fit */
+        background-position: top;
+        height: 25rem;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1 {
+          background-image: linear-gradient(
+              to right bottom,
+              rgba($color-secondary-light, 0.5),
+              rgba($color-secondary-dark, 0.5)
+            ),
+            url(../img/nat-5.jpg);
+        }
+        &--2 {
+          background-image: linear-gradient(
+              to right bottom,
+              rgba($color-primary-light, 0.5),
+              rgba($color-primary-dark, 0.5)
+            ),
+            url(../img/nat-6.jpg);
+        }
+        &--3 {
+          background-image: linear-gradient(
+              to right bottom,
+              rgba($color-tertiary-light, 0.5),
+              rgba($color-tertiary-dark, 0.5)
+            ),
+            url(../img/nat-7.jpg);
+        }
+      }
+    }
+    &--heading {
+      position: absolute;
+      font-size: 2.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color-white;
+      top: 12rem;
+      right: 2rem;
+      text-align: right;
+      width: 60%;
+
+      .heading-span {
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone; // Apply styles to all the boxes of the element
+        padding: 1rem 1.5rem;
+        &-1 {
+          background-image: linear-gradient(
+            to right bottom,
+            rgba($color-secondary-light, 0.85),
+            rgba($color-secondary-light, 0.85)
+          );
+        }
+        &-2 {
+          background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.85),
+            rgba($color-primary-light, 0.85)
+          );
+        }
+        &-3 {
+          background-image: linear-gradient(
+            to right bottom,
+            rgba($color-tertiary-light, 0.85),
+            rgba($color-tertiary-light, 0.85)
+          );
+        }
+      }
+    }
+
+    &--back {
+      transform: rotateY(180deg); // Initially the back side is rotated 180deg
+      font-size: 2rem;
+      padding: 10rem 0;
+      a {
+        margin-top: 7rem;
+      }
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+    &-text {
+      font-size: 1.5rem;
+      width: 75%;
+      margin: 0 auto;
+      p {
+        padding: 1rem 1.2rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    background-color: #fff;
+
+    &__side {
+      position: relative; // Setting position to absolute to make the front and back sides on top of each other
+      height: auto;
+      border-radius: 3px;
+      box-shadow: none;
+      &--back {
+        transform: rotateY(0); // Initially the back side is rotated 180deg
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0);
+    }
+  }
+}

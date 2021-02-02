@@ -1,0 +1,28 @@
+.feature-box {
+  font-size: $default-font-size;
+  background-color: rgba($color-white, 0.8);
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  &__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    color: $color-primary-dark;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text; // To clip the background image to the size of the text
+    background-clip: text;
+    color: transparent;  // Make the color of the text transparent so the background image is only shown 
+  }
+
+  &__text {
+    margin-bottom: 3rem;
+  }
+
+  transition: transform .3s;
+
+  &:hover {
+      transform: translateY(-1.2rem) scale(1.02);
+  }
+}

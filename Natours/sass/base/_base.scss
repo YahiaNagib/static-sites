@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  /* to make all margins and paddings to be zero by default */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* to make borders not added to the total width and height */
+}
+
+/* setting font size here to be able to use rem */
+html {
+  font-size: 62.5%;
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  
+  @include respond(tab-port) {
+    padding: 0;
+  }
+ 
+}

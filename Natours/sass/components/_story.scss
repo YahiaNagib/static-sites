@@ -1,0 +1,76 @@
+.story {
+  width: 75%;
+  background-color: rgba($color-white, 0.4);
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    transform: skewX(-13deg);
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  &__shape {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    clip-path: circle(50% at 50% 50%);
+    float: left;
+    shape-outside: circle(
+      50% at 50% 50%
+    ); // to make the floating paragraph away from the image
+    transform: translateX(-3rem) skewX(12deg);
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+  }
+
+  &__image {
+    height: 100%;
+    transform: scale(1.4) translateX(-2rem);
+    transition: all 0.4s;
+    backface-visibility: hidden;
+  }
+
+  &__content {
+    transform: skewX(12deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  &__caption {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__image {
+    filter: blur(4px) brightness(80%);
+    transform: scale(1) translateX(-3rem);
+  }
+}
